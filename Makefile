@@ -50,10 +50,10 @@ godeps: gotools
 	$(GO) get github.com/gin-gonic/gin
 	$(GO) get github.com/dustin/go-broadcast
 	$(GO) get github.com/hyperledger/fabric-chaincode-go/shim
-	$(GO) get github.com/hyperledger/fabric-protos-go/peer
+	$(GO) get github.com/hyperledger/fabric-protos-go/peer@release-2.0
 
 # TODO enable plugins again
-# plugins:
+plugins:
 	# $(foreach DIR, $(PLUGINS), $(MAKE) -C $(DIR) build || exit;)
 
 fpc-sdk: godeps

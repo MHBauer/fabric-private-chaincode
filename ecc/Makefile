@@ -43,10 +43,10 @@ ecc: ecc_enclave
 
 # TODO disabled until we fix #242
 vscc-plugin: $(VSCC_SRC)
-#	$(GO) build -o $(VSCC_OUT) -buildmode=plugin $^
+	$(GO) build -o $(VSCC_OUT) -buildmode=plugin $^
 
-#test:
-#	$(LD_LIBRARY_PATH) $(GO) $@ -test.v ./...
+test:
+	$(LD_LIBRARY_PATH) $(GO) $@ -test.v ./...
 
 #.PHONY: stress
 #stress:
