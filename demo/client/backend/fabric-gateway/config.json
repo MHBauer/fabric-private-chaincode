@@ -1,5 +1,5 @@
 {
-    "connection_profile_filename":"../gateway/localhost/connection_profile.json",
+    "connection_profile_filename":"gateway/localhost/connection_profile.json",
     "channel_name":"mychannel",
     "chaincode_name":"ecc_auctioncc",
     "wallet": "../gateway/localhost/wallet",
