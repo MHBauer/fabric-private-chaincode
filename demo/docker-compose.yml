@@ -29,7 +29,7 @@ services:
     ports:
       - "3000:3000"
     working_dir: /usr/src/app
-    command: npm start
+    # command: 
     # volumes:
       # - ./client/backend/fabric-gateway/src:/usr/src/app/src
       # - ./client/backend/fabric-gateway/config.json:/usr/src/app/config.json

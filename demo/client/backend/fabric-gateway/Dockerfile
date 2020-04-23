@@ -4,24 +4,19 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-FROM node:8.16
+FROM golang:1.14-buster
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
 
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY \
-    package.json \
-    package-lock.json\
     config.json\
     auction.json\
-    fabric-sdk-node_fabric-network_lib_transaction.js.patch\
   /usr/src/app/
-COPY src /usr/src/app/src
 COPY gateway /usr/src/app/gateway
 
-RUN npm install \
-  &&  patch -R -p0 < ./fabric-sdk-node_fabric-network_lib_transaction.js.patch
+WORKDIR /usr/src/app
+COPY . .
 
-CMD npm start
+RUN go build -v -o server ./src/
+
+CMD ["./server"]
